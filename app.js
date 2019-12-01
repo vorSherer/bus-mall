@@ -23,25 +23,26 @@ function Picture (src, nom) {
   pixArray.push(this);
 }
 
-// //Helper functions
+//Helper functions
 
-// //Random Index Generator function
-// function randomIndex(max) {
-//   return Math.floor(Math.random() * Math.floor(max));
-// }
+//Random Index Generator function
+function randomIndex(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 
-// //Image Generator Engine, displaying non-matching images
+//Image Generator Engine, displaying non-matching images
 // function picSelect() {
-//   var indexOne = randomIndex(pixArray.length);
-
+  var indexOne = randomIndex(pixArray.length);
+  console.log('Index 1 = ', indexOne);
 //   photoOne.src = pixArray[indexOne].src;
 //   photoOne.title = pixArray[indexOne].title;
 //   photoOne.alt = pixArray[indexOne].alt;
 
 //   var indexTwo = randomIndex(pixArray.length);
 
-//   while(indexTwo === indexOne);
+//   while(indexTwo === indexOne) {
 //   indexTwo = randomIndex(pixArray.length);
+//   }
 
 //   photoTwo.src = pixArray[indexTwo].src;
 //   photoTwo.title = pixArray[indexTwo].title;
@@ -49,8 +50,9 @@ function Picture (src, nom) {
 
 //   var indexThree = randomIndex(pixArray.length);
 
-//   while(indexThree === indexOne || indexThree === indexTwo);
+//   while(indexThree === indexOne || indexThree === indexTwo) {
 //   indexThree = randomIndex(pixArray.length);
+//   }
 
 //   photoThree.src = pixArray[indexThree].src;
 //   photoThree.title = pixArray[indexThree].title;
