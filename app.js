@@ -17,8 +17,8 @@ function Picture (src, nom) {
   this.src = `./img/${src}.jpg`;
   this.title = nom;
   this.alt = nom;
-  // this.viewed = 0;
-  // this.clicked = 0;
+  this.viewed = 0; //Tallies how many times a particular image was displayed
+  this.clicked = 0; //Tallies how many times a particular image was clicked on.
 
   pixArray.push(this);
 }
@@ -59,16 +59,20 @@ function picSelect() {
   photoThree.title = pixArray[indexThree].title;
   photoThree.alt = pixArray[indexThree].alt;
 
+  pixArray[indexOne].viewed ++;   //Increments the this.viewed property for the first image
+  pixArray[indexTwo].viewed ++;   //Increments the this.viewed property for the second image
+  pixArray[indexThree].viewed ++; //Increments the this.viewed property for the third image
+
   console.log('indices', indexOne, indexTwo, indexThree);
 }
 
+//Add Event Handler
 function handleClick(event) {
+  console.log(event.target.title);  //Cleaner console display
+  var vote = event.target.title; //Creates a tally mechanism for the image that was clicked on.
+  picSelect();
   // console.log('You clicked me!!');  //Proof of Life
 }
-
-
-
-
 
 
 // //Major Functions
@@ -106,5 +110,5 @@ photoBin.addEventListener('click', handleClick);
 picSelect();
 
 //Prove all pictures made it into the array
-// console.table(pixArray);
+console.table(pixArray);
 
