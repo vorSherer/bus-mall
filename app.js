@@ -11,6 +11,8 @@ var photoTwo = document.getElementById('photo2');
 var photoThree = document.getElementById('photo3');
 var photoBin = document.getElementById('photoBin');
 var pixArray = [];
+var voteRounds = 4;
+var round = 1;
 
 //Image Generation Constructor
 function Picture (src, nom) {
@@ -39,6 +41,8 @@ function picSelect() {
   photoOne.title = pixArray[indexOne].title;
   photoOne.alt = pixArray[indexOne].alt;
 
+  pixArray[indexOne].viewed ++; //Increments the this.viewed property for the first image
+
   var indexTwo = randomIndex(pixArray.length);
 
   while(indexTwo === indexOne) {
@@ -48,6 +52,8 @@ function picSelect() {
   photoTwo.src = pixArray[indexTwo].src;
   photoTwo.title = pixArray[indexTwo].title;
   photoTwo.alt = pixArray[indexTwo].alt;
+
+  pixArray[indexTwo].viewed ++; //Increments the this.viewed property for the second image
 
   var indexThree = randomIndex(pixArray.length);
 
@@ -59,24 +65,32 @@ function picSelect() {
   photoThree.title = pixArray[indexThree].title;
   photoThree.alt = pixArray[indexThree].alt;
 
-  pixArray[indexOne].viewed ++;   //Increments the this.viewed property for the first image
-  pixArray[indexTwo].viewed ++;   //Increments the this.viewed property for the second image
   pixArray[indexThree].viewed ++; //Increments the this.viewed property for the third image
 
-  console.log('indices', indexOne, indexTwo, indexThree);
+  // console.log('indices', indexOne, indexTwo, indexThree);
+  console.table(pixArray);
 }
 
-//Add Event Handler
+//Add an Event Handler
 function handleClick(event) {
-  console.log(event.target.title);  //Cleaner console display
+  console.log(event.target.title); //Cleaner console display
   var vote = event.target.title; //Creates a tally mechanism for the image that was clicked on.
+  console.log(vote, ' was clicked.');
+  for ( var i = 0; i < pixArray.length; i++ ) {
+    if ( vote === pixArray[i].title) {
+      pixArray[i].clicked ++;
+      console.log('round ', round);
+      round++;
+    }
+  }
   picSelect();
   // console.log('You clicked me!!');  //Proof of Life
+  //Prove all pictures made it into the array
 }
 
 
 // //Major Functions
-
+// Image Instantiator Function
 function createOnPageLoad() {
   new Picture ('bag', 'R2-D2 Roller Luggage');
   new Picture ('banana', 'Banana Slicer');
@@ -104,11 +118,12 @@ function createOnPageLoad() {
 createOnPageLoad();
 
 //Add an Event Listener
-photoBin.addEventListener('click', handleClick);
+//Wrap the event Listener in a function that limits its use to the number of voting rounds specified by the user
+// while (+round < +voteRounds) {
+  photoBin.addEventListener('click', handleClick);
+// } else {
+//   finalTally();
+// }
 
 //Generate Image set
 picSelect();
-
-//Prove all pictures made it into the array
-console.table(pixArray);
-
