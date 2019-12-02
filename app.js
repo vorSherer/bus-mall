@@ -9,7 +9,7 @@
 var photoOne = document.getElementById('photo1');
 var photoTwo = document.getElementById('photo2');
 var photoThree = document.getElementById('photo3');
-// var photoBin = document.getElementById('photoBin');
+var photoBin = document.getElementById('photoBin');
 var pixArray = [];
 
 //Image Generation Constructor
@@ -31,70 +31,80 @@ function randomIndex(max) {
 }
 
 //Image Generator Engine, displaying non-matching images
-// function picSelect() {
+function picSelect() {
   var indexOne = randomIndex(pixArray.length);
-  console.log('Index 1 = ', indexOne);
-//   photoOne.src = pixArray[indexOne].src;
-//   photoOne.title = pixArray[indexOne].title;
-//   photoOne.alt = pixArray[indexOne].alt;
+  // console.log('pixArray length ', pixArray.length);
+  // console.log('Index 1 = ', indexOne);
+  photoOne.src = pixArray[indexOne].src;
+  photoOne.title = pixArray[indexOne].title;
+  photoOne.alt = pixArray[indexOne].alt;
 
-//   var indexTwo = randomIndex(pixArray.length);
+  var indexTwo = randomIndex(pixArray.length);
 
-//   while(indexTwo === indexOne) {
-//   indexTwo = randomIndex(pixArray.length);
-//   }
+  while(indexTwo === indexOne) {
+    indexTwo = randomIndex(pixArray.length);
+  }
 
-//   photoTwo.src = pixArray[indexTwo].src;
-//   photoTwo.title = pixArray[indexTwo].title;
-//   photoTwo.alt = pixArray[indexTwo].alt;
+  photoTwo.src = pixArray[indexTwo].src;
+  photoTwo.title = pixArray[indexTwo].title;
+  photoTwo.alt = pixArray[indexTwo].alt;
 
-//   var indexThree = randomIndex(pixArray.length);
+  var indexThree = randomIndex(pixArray.length);
 
-//   while(indexThree === indexOne || indexThree === indexTwo) {
-//   indexThree = randomIndex(pixArray.length);
-//   }
+  while(indexThree === indexOne || indexThree === indexTwo) {
+    indexThree = randomIndex(pixArray.length);
+  }
 
-//   photoThree.src = pixArray[indexThree].src;
-//   photoThree.title = pixArray[indexThree].title;
-//   photoThree.alt = pixArray[indexThree].alt;
+  photoThree.src = pixArray[indexThree].src;
+  photoThree.title = pixArray[indexThree].title;
+  photoThree.alt = pixArray[indexThree].alt;
 
-//   console.log('indices', indexOne, indexTwo, indexThree);
-// }
+  console.log('indices', indexOne, indexTwo, indexThree);
+}
+
+function handleClick(event) {
+  // console.log('You clicked me!!');  //Proof of Life
+}
+
+
+
+
+
 
 // //Major Functions
 
 function createOnPageLoad() {
-new Picture ('bag', 'R2-D2 Roller Luggage');
-new Picture ('banana', 'Banana Slicer');
-new Picture ('bathroom', 'Bathroom Tablet Holder');
-new Picture ('boots', 'Open-toed Wellies');
-new Picture ('breakfast', 'Breakfast Station');
-new Picture ('bubblegum', 'Meatball Bubblegum');
-new Picture ('chair', 'Camel-seat Chair');
-new Picture ('cthulu', 'Cthulu Action Figure');
-new Picture ('dog-duck', 'Doggie Duck Muzzle');
-new Picture ('dragon', 'Canned Dragon Meat');
-new Picture ('pen', 'Plasticware Pen Toppers');
-new Picture ('pet-sweep', 'Pet Duster Boots');
-new Picture ('scissors', 'Pizza Scissors');
-new Picture ('shark', 'Shark Sleeping bag');
-new Picture ('sweep', 'Baby Creeper Sweeper');
-new Picture ('tauntaun', 'Star Wars Tauntaun Sleeping Bag');
-new Picture ('unicorn', 'Canned Unicorn Meat');
-new Picture ('usb', 'USB Tentacle');
-new Picture ('water-can', 'Recursive Water Can');
-new Picture ('wine-glass', 'Wine Sniffer Snifter');
+  new Picture ('bag', 'R2-D2 Roller Luggage');
+  new Picture ('banana', 'Banana Slicer');
+  new Picture ('bathroom', 'Toilet Paper and Tablet Holder');
+  new Picture ('boots', 'Open-toed Wellies');
+  new Picture ('breakfast', 'Breakfast Station');
+  new Picture ('bubblegum', 'Meatball Bubblegum');
+  new Picture ('chair', 'Camel-seat Chair');
+  new Picture ('cthulhu', 'Cthulhu Action Figure');
+  new Picture ('dog-duck', 'Doggie Duck Muzzle');
+  new Picture ('dragon', 'Canned Dragon Meat');
+  new Picture ('pen', 'Plasticware Pen Toppers');
+  new Picture ('pet-sweep', 'Pet Duster Boots');
+  new Picture ('scissors', 'Pizza Scissors');
+  new Picture ('shark', 'Shark Sleeping bag');
+  new Picture ('sweep', 'Baby Creeper Sweeper');
+  new Picture ('tauntaun', 'Star Wars Tauntaun Sleeping Bag');
+  new Picture ('unicorn', 'Canned Unicorn Meat');
+  new Picture ('usb', 'USB Tentacle');
+  new Picture ('water-can', 'Recursive Water Can');
+  new Picture ('wine-glass', 'Wine Sniffer Snifter');
 }
 
 //Function Calls
 createOnPageLoad();
 
-// //Add an Event Listener
-// photoBin.addEventListener('click', handleClick);
+//Add an Event Listener
+photoBin.addEventListener('click', handleClick);
 
-// //Generate Image set
-// picSelect();
+//Generate Image set
+picSelect();
 
 //Prove all pictures made it into the array
-console.table(pixArray);
+// console.table(pixArray);
 

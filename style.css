@@ -1,0 +1,15 @@
+body {
+    width: 100%;
+}
+
+section {
+    width: 100%;
+}
+
+img {
+    float: left;
+    width: 30%;
+    margin: 5px auto;
+    border: 2px blue solid;
+}
+
