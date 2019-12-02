@@ -13,5 +13,9 @@ eslintrc.json and gitignore courtesy of Code Fellows (from where ever they got t
 Random Number Generation code courtesy of MDN;
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
+h1 resizing solution found on stackoverflow
+https://stackoverflow.com/questions/10668056/in-css-how-do-you-change-font-size-of-h1-and-h2
 
+CSS text positioning assistance courtesy of W3 Schools
+https://www.w3schools.com/howto/howto_css_center-vertical.asp
 

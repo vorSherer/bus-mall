@@ -76,7 +76,7 @@ function handleClick(event) {
 
 
 // //Major Functions
-
+// Image Instantiator Function
 function createOnPageLoad() {
   new Picture ('bag', 'R2-D2 Roller Luggage');
   new Picture ('banana', 'Banana Slicer');
