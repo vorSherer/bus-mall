@@ -10,6 +10,7 @@ var photoOne = document.getElementById('photo1');
 var photoTwo = document.getElementById('photo2');
 var photoThree = document.getElementById('photo3');
 var photoBin = document.getElementById('photoBin');
+var marketBlurb = document.getElementById('verbage')
 var resultsSection = document.getElementById('list');
 var pixArray = [];
 var picArrayContainers = [photoOne, photoTwo, photoThree];
@@ -38,11 +39,11 @@ function picSelect() {
   var currentImages = [];
   for (var i = 0; i < picArrayContainers.length; i++) {
     var currentRandomIndex = randomIndex(pixArray.length);
-    console.log('outside while', currentRandomIndex);
+    // console.log('outside while', currentRandomIndex);
     while (currentImages.includes(currentRandomIndex)) {
-      console.log('inside while', currentRandomIndex);
+      // console.log('inside while', currentRandomIndex);
       currentRandomIndex = randomIndex(pixArray.length);
-      console.log('new random inside while', currentRandomIndex);
+      // console.log('new random inside while', currentRandomIndex);
       // console.log(currentImages);
     }
     currentImages.push(currentRandomIndex);
@@ -72,9 +73,10 @@ function handleClick(event) {
     //Prove all pictures made it into the array
   } else {
     photoBin.removeEventListener('click', handleClick);
-    console.log('i stopped');
+    // console.log('i stopped');
     analysis();
     hide(photoBin);
+    hide(marketBlurb);
   }
 }
 
