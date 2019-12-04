@@ -1,16 +1,11 @@
 'use strict';
 
-//Add the project requirements as comment lines, to be replaced by code later.
-
-//Start with Proof of Life
-// console.log('Proof of Life');
-
 //Global variables
 var photoOne = document.getElementById('photo1');
 var photoTwo = document.getElementById('photo2');
 var photoThree = document.getElementById('photo3');
 var photoBin = document.getElementById('photoBin');
-var marketBlurb = document.getElementById('verbage')
+var marketBlurb = document.getElementById('verbage');
 var resultsSection = document.getElementById('list');
 var pixArray = [];
 var picArrayContainers = [photoOne, photoTwo, photoThree];
@@ -56,7 +51,7 @@ function picSelect() {
   // console.table(pixArray);
 }
 
-//Add an Event Handler
+//Event Handler
 function handleClick(event) {
   voteRounds--;
   if (voteRounds !== 0) {
@@ -68,6 +63,7 @@ function handleClick(event) {
         pixArray[i].clicked++;
       }
     }
+
     picSelect();
     // console.log('You clicked me!!');  //Proof of Life
     //Prove all pictures made it into the array
@@ -78,11 +74,6 @@ function handleClick(event) {
     hide(photoBin);
     hide(marketBlurb);
   }
-}
-
-// Show an element
-function show(elem) {
-  elem.style.display = 'block';
 }
 
 // Hide an element
@@ -101,6 +92,7 @@ function analysis() {
 }
 
 // //Major Functions
+
 // Image Instantiator Function
 function createOnPageLoad() {
   new Picture('bag', 'R2-D2 Roller Luggage');
@@ -128,13 +120,9 @@ function createOnPageLoad() {
 //Function Calls
 createOnPageLoad();
 
-//Add an Event Listener
+//Event Listener
 //Wrap the event Listener in a function that limits its use to the number of voting rounds specified by the user
-// while (+round < +voteRounds) {
 photoBin.addEventListener('click', handleClick);
-// } else {
-//   finalTally();
-// }
 
 //Generate Image set
 picSelect();
