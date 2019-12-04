@@ -14,7 +14,7 @@ var marketBlurb = document.getElementById('verbage')
 var resultsSection = document.getElementById('list');
 var pixArray = [];
 var picArrayContainers = [photoOne, photoTwo, photoThree];
-var voteRounds = 5;
+var voteRounds = 25;
 
 //Image Generation Constructor
 function Picture(src, nom) {
