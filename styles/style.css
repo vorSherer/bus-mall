@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 body {
     width: 100%;
     background-color: gainsboro;
@@ -16,6 +19,20 @@ h1 {
     height: 300px;
 }
 
+#photoBin > section {
+    margin: auto;
+    width: 910px;
+}
+
+ul {
+    width: 50%;
+    margin: auto;
+}
+
+li {
+    margin: 13px 0;
+    text-align: center;
+}
 img {
     float: center;
     width: 280px;
