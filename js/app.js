@@ -73,6 +73,8 @@ function handleClick(event) {
     analysis();
     hide(photoBin);
     hide(marketBlurb);
+    var preserveResults = JSON.stringify(pixArray);
+    localStorage.setItem('results', preserveResults);
   }
 }
 
@@ -118,7 +120,14 @@ function createOnPageLoad() {
 }
 
 //Function Calls
+function prevResultsCheck() {
+    var fetchResults = localStorage.getItem('results', preserveResults);
+    if (fetchResults) {
+      pixArray = JSON.parse(fetchResults);
+    }
+  }
 createOnPageLoad();
+}
 
 //Event Listener
 //Wrap the event Listener in a function that limits its use to the number of voting rounds specified by the user
