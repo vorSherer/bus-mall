@@ -124,7 +124,6 @@ function prevResultsCheck() {
     var fetchResults = localStorage.getItem('results', preserveResults);
     if (fetchResults) {
       pixArray = JSON.parse(fetchResults);
-
     }
   }
 createOnPageLoad();
